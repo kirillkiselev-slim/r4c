@@ -3,7 +3,7 @@ class RobotSerializer:
         self.data = data
 
     def is_valid(self):
-        valid_models = ["R2", "13", "X5"]
+        valid_models = ["R2", "13", "X5"] # при валидации брал в расчёт, что существует всего 3 модели и 5 версий роботов
         valid_versions = ["D2", "XS", "LT", "A1", "C8"]
 
         model = self.data.get('model', '').upper()
