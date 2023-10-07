@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Order</title>
+    <link href="{% static 'css/form.css' %}" rel="stylesheet">
+</head>
+<body id="body">
+
+    <div id="login-card">
+<!--        <div class="card-body">-->
+            <h2>Order</h2>
+            <br>
+            <form action="{% url 'order' %}" method="POST"> {% csrf_token %}
+                Enter your model: <input name="model" placeholder="Model">
+                <br>
+                <br>
+                Enter your version: <input name="version" placeholder="Version">
+                <br>
+                <br>
+                Enter your email: <input name="email" placeholder="Your Email">
+                <br>
+                <br>
+                <button type="submit" id="buttonSubmit">Order</button>
+                <br>
+                <br>
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </form>
+    </div>
+
+</body>
+</html>
