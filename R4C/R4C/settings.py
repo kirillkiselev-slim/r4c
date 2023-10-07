@@ -121,3 +121,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = "/static/"
+
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp-mail.outlook.com"  # smtp.office365.com
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "kiselevkirill258@outlook.com"
+EMAIL_HOST_PASSWORD = "hbzhwrhvubiljwgn"
+EMAIL_USE_TLS = True
